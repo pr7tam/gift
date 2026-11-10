@@ -1,0 +1,345 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#f3e8ff">
+    <title>For My Dear Sis! 💜</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="hearts"></div>
+
+<!-- SCREEN 1: WELCOME -->
+<section class="screen active" id="welcome">
+    <div class="card">
+        <div class="emoji">💌</div>
+        <p class="tag">A little surprise made with love</p>
+        <h1>Hey, <span class="name">Dear Didi</span>! 💜</h1>
+        <p>
+            I have something special for you.
+            A little surprise for my cutest Sister! 🧸
+        </p>
+        <button class="btn" onclick="goTo('question')">
+            Open Your Surprise ✨
+        </button>
+        <div class="small">Made with love, just for you ♡</div>
+    </div>
+</section>
+
+<!-- SCREEN 2: QUESTION -->
+<section class="screen" id="question">
+    <div class="card">
+        <div class="emoji">🥹💜</div>
+        <p class="tag">Dekhte hain tum mujhe kitna jaanti ho! 😏</p>
+        <h1>Tum mujhe jaanti ho ki main tumhara kaun hoon? 🫶</h1>
+        <p>Soch samajh kar answer dena, Didii! 😂💗</p>
+
+        <div class="buttons">
+            <button class="btn" onclick="wrongAnswer(0)">Bhaiya 🥰</button>
+            <button class="btn" onclick="wrongAnswer(1)">Didii 🧸</button>
+            <button class="btn" onclick="sayYes()">Chhota Bhai!!! 😎💜</button>
+        </div>
+
+        <p id="questionMessage" class="small">Sahi answer do! 👀💕</p>
+    </div>
+</section>
+
+<!-- SCREEN 3: CELEBRATION -->
+<section class="screen" id="celebration">
+    <div class="card">
+        <div class="emoji">🥳💜🎉</div>
+        <h1>Yayyy, I Knew It!</h1>
+        <p>
+            No matter how much we fight, tease, or annoy each other,
+            you will always be my favourite sister! 🥹💗
+        </p>
+        <button class="btn" onclick="goTo('memories')">
+            Our Little World 📸
+        </button>
+    </div>
+</section>
+
+<!-- SCREEN 4: MEMORIES -->
+<section class="screen" id="memories">
+    <div class="content">
+        <p class="tag">Little moments, endless memories</p>
+        <h1>Our Little World 📸</h1>
+        <p>Every memory with you is a little treasure. 💜</p>
+
+        <div class="gallery">
+
+            <div class="polaroid">
+                <img src="image/image3.jpeg" alt="Our first memory"
+                onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                <div class="placeholder">📸<span>Add Photo 1</span></div>
+                <p>My favourite troublemaker! 😂</p>
+            </div>
+
+            <div class="polaroid">
+                <img src="image/image1.jpeg" alt="A special memory"
+                onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                <div class="placeholder">🧸<span>Add Photo 2</span></div>
+                <p>Partners in crime forever! 🫶</p>
+            </div>
+
+            <div class="polaroid">
+                <img src="image/image 2.jpeg" alt="A happy memory"
+                onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                <div class="placeholder">💜<span>Add Photo 3</span></div>
+                <p>One bond, countless memories.</p>
+            </div>
+
+        </div>
+
+        <button class="btn" onclick="goTo('music')">
+            Play Our Song 🎵
+        </button>
+    </div>
+</section>
+
+<!-- SCREEN 5: MUSIC -->
+<section class="screen" id="music">
+    <div class="card">
+        <div class="music-icon">🎧</div>
+        <p class="tag">A song for our bond</p>
+        <h1>Our Special Song 🎵</h1>
+        <p>Some feelings are easier to express through music. 💜</p>
+
+        <div class="custom-music-player">
+            <div class="song-cover">🎵💜🎀</div>
+
+            <h3>Our Special Song</h3>
+            <p class="small">A little melody, just for you! 💗</p>
+
+            <audio id="ourSong" preload="metadata">
+                <source src="./music/ourSong.mp3" type="audio/mpeg">
+                Your browser does not support audio.
+            </audio>
+
+            <button class="btn" id="playBtn" onclick="toggleSong()">
+                ▶ Play Our Song
+            </button>
+
+            <input type="range" id="songProgress"
+                value="0" min="0" max="100" step="0.1"
+                aria-label="Song progress">
+
+            <div class="song-time">
+                <span id="currentTime">0:00</span>
+                <span id="duration">0:00</span>
+            </div>
+        </div>
+
+        <p class="small">Made with love, especially for you! 🎀💗</p>
+
+        <button class="btn" onclick="goTo('gifts')">
+            Open Your Gifts 🎁
+        </button>
+    </div>
+</section>
+
+<!-- SCREEN 6: GIFTS -->
+<section class="screen" id="gifts">
+    <div class="content">
+
+        <p class="tag">Three little surprises</p>
+        <h1>Choose Your Gift 🎁</h1>
+        <p>Tap each gift to discover what's inside! 💗</p>
+
+        <div class="gift-grid">
+
+            <button class="gift" onclick="openGift(0)">
+                <span>🎁</span>
+                <small>Gift One</small>
+                <em class="gift-status">Tap to open</em>
+            </button>
+
+            <button class="gift" onclick="openGift(1)">
+                <span>🎁</span>
+                <small>Gift Two</small>
+                <em class="gift-status">Tap to open</em>
+            </button>
+
+            <button class="gift" onclick="openGift(2)">
+                <span>🎁</span>
+                <small>Gift Three</small>
+                <em class="gift-status">Tap to open</em>
+            </button>
+
+        </div>
+
+        <div class="gift-progress" id="giftProgress">
+            0 of 3 surprises opened 💜
+        </div>
+
+        <button class="btn" onclick="goTo('letter')">
+            A Letter For You 💌
+        </button>
+
+    </div>
+</section>
+
+<!-- GIFT POPUP -->
+<div class="gift-modal" id="giftModal" aria-hidden="true">
+
+    <div class="gift-modal-backdrop" onclick="closeGift()"></div>
+
+    <div class="gift-modal-card" role="dialog"
+        aria-modal="true" aria-labelledby="giftModalTitle">
+
+        <button class="modal-close" onclick="closeGift()">×</button>
+
+        <p class="tag" id="giftModalTag">A little surprise</p>
+        <h2 id="giftModalTitle">Your Gift 💜</h2>
+
+        <!-- GIFT 1: PHOTO SLIDESHOW -->
+        <div class="gift-panel" id="giftPanel0">
+
+            <p class="gift-intro">
+                A few little moments that make our bond special. 🥹
+            </p>
+
+            <div class="memory-slide">
+
+                <button class="slide-arrow" onclick="changeSlide(-1)">‹</button>
+
+                <div class="slide-photo-wrap">
+                    <img id="giftSlideImage"
+                        src="image/image3.jpeg"
+                        alt="A memory together">
+
+                    <div id="giftSlideFallback" class="slide-fallback">
+                        📸
+                        <span>Your photo will appear here</span>
+                    </div>
+                </div>
+
+                <button class="slide-arrow" onclick="changeSlide(1)">›</button>
+
+            </div>
+
+            <p class="slide-caption" id="giftSlideCaption">
+                My favourite troublemaker! 😂
+            </p>
+
+            <div class="slide-dots" id="slideDots"></div>
+        </div>
+
+        <!-- GIFT 2: LOVE LETTER -->
+        <div class="gift-panel" id="giftPanel1" hidden>
+
+            <p class="gift-intro">
+                A tiny letter, carrying a big hug for you. 💗
+            </p>
+
+            <button class="envelope-button" id="envelopeButton"
+                onclick="revealGiftLetter()">
+
+                <span class="envelope">💌</span>
+                <strong>Tap the envelope to open</strong>
+
+            </button>
+
+            <div class="hidden-letter" id="hiddenGiftLetter">
+                <div class="emoji">💗</div>
+                <h3>For My Dear Didi</h3>
+
+                <p>
+                    You make ordinary moments feel special.
+                    Thank you for every laugh, every little fight,
+                    and every memory.
+
+                    No matter where life takes us,
+                    you will always have a little brother cheering for you.
+
+                    Love you, Didi! 💜
+                </p>
+            </div>
+
+        </div>
+
+        <!-- GIFT 3: MAGICAL SURPRISE -->
+        <div class="gift-panel" id="giftPanel2" hidden>
+
+            <div class="magic-scene">
+
+                <div class="magic-gift" id="magicGift">🎁</div>
+
+                <div class="magic-sparkles">
+                    ✨ 💜 ✨ 🌸 ✨
+                </div>
+
+                <h3 id="magicTitle">A little magic for you!</h3>
+
+                <p id="magicMessage">
+                    You deserve happiness, success, endless smiles,
+                    and all the beautiful things in the world.
+                </p>
+
+                <button class="btn" onclick="releaseMagic()">
+                    Make a Wish ✨
+                </button>
+
+            </div>
+        </div>
+
+        <div class="modal-footer">
+            <span id="giftOpenedLabel">A surprise made with love ♡</span>
+            <button class="btn btn-soft" onclick="closeGift()">
+                Back to Gifts
+            </button>
+        </div>
+
+    </div>
+</div>
+
+<!-- SCREEN 7: LETTER -->
+<section class="screen" id="letter">
+    <div class="letter">
+        <div class="emoji">💌</div>
+        <p class="tag">Something from my heart</p>
+
+        <h1>Dear  <span class="name">Sis!!</span>,</h1>
+
+        <p id="letterText"></p>
+
+        <p class="signature">
+            Lots of love,<br>
+            <span id="sender">Your Forever Partner-in-Crime</span> 💜
+        </p>
+
+        <button class="btn" onclick="goTo('final')">
+            One Last Surprise ✨
+        </button>
+    </div>
+</section>
+
+<!-- SCREEN 8: FINAL -->
+<section class="screen" id="final">
+    <div class="card">
+        <div class="emoji">💜🌷✨</div>
+        <p class="tag">Forever and always</p>
+
+        <h1>Happyy Birthday Didiii!💖</h1>
+
+        <p>
+            Different moods, silly fights, endless laughter...
+            but one bond that will always stay special. 🥹
+        </p>
+
+        <h2>Love You, Dii! 💗</h2>
+
+        <button class="btn" onclick="restartWebsite()">
+            Relive Our Memories ↻
+        </button>
+
+        <div class="small">Made with ♡, just for you.</div>
+    </div>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>
