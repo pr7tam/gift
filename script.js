@@ -29,15 +29,15 @@ and through every chapter of life. 💜`
 // Keep the filenames exactly the same as your actual photos.
 const MEMORY_PHOTOS = [
     {
-        src: "image/image3.jpeg",
+        src: "./image3.jpeg",
         caption: "My favourite troublemaker! 😂"
     },
     {
-        src: "image/image1.jpeg",
+        src: "./image1.jpeg",
         caption: "Partners in crime forever! 🫶"
     },
     {
-        src: "image/image 2.jpeg",
+        src: "./image 2.jpeg",
         caption: "One bond, countless memories. 💜"
     }
 ];
