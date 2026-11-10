@@ -37,7 +37,7 @@ const MEMORY_PHOTOS = [
         caption: "Partners in crime forever! 🫶"
     },
     {
-        src: "./image 2.jpeg",
+        src: "./image2.jpeg",
         caption: "One bond, countless memories. 💜"
     }
 ];
